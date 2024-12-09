@@ -16,7 +16,7 @@
 # Modify the following lines to fit your project
 # SRC_FILES is the list of source files to compile, files are separated by a space.
 # Do not put .h files into the source files!
-SRC_FILES  = main.cpp Date.cpp Book.cpp
+SRC_FILES  = main.cpp
 #
 # APP is the name of the executable, the executable will be generated into the bin directory
 APP        = app
@@ -46,14 +46,12 @@ DEPS	   = $(OBJ_FILES:.o=.d)
 
 all: $(TARGET)
 
-# Link object files to executable into the bin directory
 $(TARGET): $(OBJ_FILES)
-	@mkdir -p $(BINDIR)
+	@if not exist $(BINDIR) mkdir $(BINDIR)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(TARGET) $(OBJ_FILES)
 
-# Compile source files to object files into the build directory
 $(BUILDIR)/%.o: %.cpp
-	@mkdir -p $(BUILDIR)
+	@if not exist $(BUILDIR) mkdir $(BUILDIR)
 	$(CXX) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
 
 # Clean up the build directory
