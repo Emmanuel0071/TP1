@@ -1,22 +1,22 @@
 #include <iostream>
 #include <string>
+#include <vector>
+
 
 class Client {
 
-    public:{
+    public:
 
-        Client(std::vector<double> ISBN, std::string name, std::string nickname,std::string id);
+        Client(std::vector <double> ISBN, std::string name, std::string nickname,std::string id);
 
-    }
-
-    private:{
+    private:
 
         std::vector<double> _ISBN;
         std::string _name;
         std::string _nickname;
         std::string _id;
 
-    }
+    
 
 
 };
