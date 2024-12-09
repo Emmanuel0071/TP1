@@ -3,11 +3,11 @@
 #include "Date.h"
 
 
-class Brorrow {
-    Public:
-        Borrow(Date date,double ISBN,sdt::string idlecteur);
-    Private:
+class Borrow {
+    public:
+        Borrow(Date date,double ISBN,std::string idlecteur);
+    private:
         Date _date;
         double _ISBN;
-        sdt::string _idlecteur;
-}
+        std::string _idlecteur;
+};
