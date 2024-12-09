@@ -1,24 +1,27 @@
-#include "Book.h"
-#include "client.h"
-#include "borrow.h"
+#include "library.h"
 
-class Library {
-private:
-    std::vector<Client> clients;
-    std::vector<Book> books;
-    std::vector<Borrow> borrows;
+Library::Library() {}
 
-public:
-    Library();
+const std::vector<Client>& Library::getClients() const {
 
-    const std::vector<Client>& getClients() const;
-    const std::vector<Book>& getBooks() const;
-    const std::vector<Borrow>& getBorrows() const;
+}
+const std::vector<Book>& Library::getBooks() const {
 
-    void addClient(const Client& client);
-    void addBook(const Book& book);
-    void addBorrow(const Borrow& book);
+}
+const std::vector<Borrow>& Library::getBorrows() const {
 
-    void borrowing(const Client& client, const Book& book);
+}
+
+void Library::addClient(const Client& client) {
+
+}
+void Library::addBook(const Book& book) {
+
+}
+void Library::addBorrow(const Borrow& book) {
+
+}
+
+void Library::borrowing(const Client& client, const Book& book) {
 
 }

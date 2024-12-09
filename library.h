@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Book.h"
 #include "client.h"
 #include "borrow.h"
