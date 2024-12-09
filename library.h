@@ -17,9 +17,9 @@ public:
     const std::vector<Book>& getBooks() const;
     const std::vector<Borrow>& getBorrows() const;
 
-    void addClient(const Client& client);
-    void addBook(const Book& book);
-    void addBorrow(const Borrow& book);
+    void addClient(const Client& newClient);
+    void addBook(const Book& newBook);
+    void addBorrow(const Borrow& newBorrow);
 
     void borrowing(const Client& client, const Book& book);
 
