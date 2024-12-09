@@ -18,13 +18,13 @@
 SRC_FILES = main.cpp
 #
 # APP is the name of the executable, the executable will be generated into the bin
-directory
+
 APP = app
 #
 # Choose your compiler Use g++ on Linux, Windows and clang++ on Mac OS X
 CXX = g++
 # Compiler options Wall for all warnings, std=c++17 for C++17
-CXXFLAGS = Wall std=c++17
+CXXFLAGS = -Wall -std=c++17
 #
 # —————————————————————————————
 # Do not modify the following lines, unless you know what you are doing
