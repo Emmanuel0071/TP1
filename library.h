@@ -10,8 +10,10 @@ private:
     std::vector<Book> books;
     std::vector<Borrow> borrows;
 
+    Date actualDate;
+
 public:
-    Library();
+    Library(const Date& date);
 
     const std::vector<Client>& getClients() const;
     const std::vector<Book>& getBooks() const;
@@ -21,6 +23,8 @@ public:
     void addBook(const Book& newBook);
     void addBorrow(const Borrow& newBorrow);
 
-    void borrowing(const Client& client, const Book& book);
+    void borrowingBook(const Client& client, const Book& book);
+    void returningBook(const Client& client, const Book& book);
+
 
 };

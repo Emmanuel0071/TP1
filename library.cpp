@@ -1,6 +1,6 @@
 #include "library.h"
 
-Library::Library() {}
+Library::Library(const Date& date) : actualDate(1, 1, 2000) {}
 
 const std::vector<Client>& Library::getClients() const {
     return clients;
@@ -26,10 +26,20 @@ void Library::addBook(const Book& newBook) {
         }
     }
 }
+
 void Library::addBorrow(const Borrow& newBorrow) {
 
 }
 
-void Library::borrowing(const Client& client, const Book& book) {
+void Library::borrowingBook(const Client& client, const Book& book) {
+    for (int i = 0; i < borrows.size(); i++) {
+        if (book.getISBN() != borrows[i].getISBN()) {
+            Borrow newBorrow(client.getId(), book.getISBN(), actualDate);
+            borrows.emplace_back(newBorrow);
+        }
+    }
+}
+
+void Library::returningBook(const Client& client, const Book& book) {
 
 }
