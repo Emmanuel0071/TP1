@@ -5,7 +5,8 @@ Date::Date(int _day, int _month, int _year) {
     
         
     while (!isValidDate(_day, _month, _year)){
-        std::cout<<"La date n'est pas bonne veiller a la changer"<<std::endl;
+       
+        std::cout<<" changer la date"<<std::endl;
         std::cout<<"rentrer le jour"<<std::endl;
         std::cin>>_day;
         std::cout<<"rentrer le mois"<<std::endl;
@@ -22,7 +23,7 @@ Date::Date(int _day, int _month, int _year) {
 Date::~Date() {}
 
 bool Date::isValidDate(int day, int month, int year) const {
-    if (month >= 1 && month <= 12) {
+    if (month >= 1 && month <= 12 && year >= 2024) {
         int dayCount;
         switch (month) {
             case 1 : dayCount = 31; break;
@@ -43,7 +44,7 @@ bool Date::isValidDate(int day, int month, int year) const {
             return false;
         }
         return true;
-        if (year<2024) return false;
+        
         
         
     }

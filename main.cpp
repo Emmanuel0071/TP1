@@ -4,7 +4,7 @@
 
 
 int main() {
-    std::cout << "bite";
-
+    Date d(1, 1, 2021);
+    std::cout << "Date valide" << std::endl;
     return 0;
 }
