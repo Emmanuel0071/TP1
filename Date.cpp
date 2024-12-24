@@ -1,10 +1,19 @@
 #include "Date.h"
 #include <stdexcept>
-
+#include <iostream>
 Date::Date(int _day, int _month, int _year) {
-    if (!isValidDate(_day, _month, _year)) {
-        throw std::invalid_argument("Date invalide");
-    }
+    
+        
+    while (!isValidDate(_day, _month, _year)){
+        std::cout<<"La date n'est pas bonne veiller a la changer"<<std::endl;
+        std::cout<<"rentrer le jour"<<std::endl;
+        std::cin>>_day;
+        std::cout<<"rentrer le mois"<<std::endl;
+        std::cin>>_month;
+        std::cout<<"rentrer le année"<<std::endl;
+        std::cin>>_year;
+        }
+    
     day = _day;
     month = _month;
     year = _year;
@@ -34,6 +43,9 @@ bool Date::isValidDate(int day, int month, int year) const {
             return false;
         }
         return true;
+        if (year<2024) return false;
+        
+        
     }
     return false;
 }
