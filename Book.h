@@ -19,5 +19,18 @@ public:
     const Date& _publicationDate, const std::vector<std::string>& _idClients);
 
     const std::string& getISBN() const;
+    const std::string& getTitle() const;   
+    const std::string& getAutor() const;
+    const std::string& getLanguage() const;
+    const std::string& getGenre() const;
+    const Date& getPublicationDate() const;
+    const std::vector<std::string>& getIdClients() const;
+
+    void setISBN(const std::string& NewISBN); 
+    void setTitle(const std::string& NewTitle);
+    void setAutor(const std::string& NewAutor);
+    void setLanguage(const std::string& NewLanguage);
+    void setGenre(const std::string& NewGenre);
+    void setPublicationDate(const Date& NewPublicationDate);
 
 };
