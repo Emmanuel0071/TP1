@@ -1,6 +1,8 @@
 #ifndef DATE_H
 #define DATE_H
 
+#include <iostream>
+
 class Date {
 private:
     int day;
@@ -12,6 +14,8 @@ public:
     ~Date();
 
     bool isValidDate(int day, int month, int year) const;
+
+    friend std::ostream& operator<<(std::ostream& os, const Date& date);
 };
 
 #endif //DATE_H

@@ -1,6 +1,6 @@
 #include "author.h"
 #include <iostream>
-Author::Author(int id, const std::string& surname, const std::string& firstName, const std::string& dateOfBirth)
+Author::Author(int id, const std::string& surname, const std::string& firstName, const Date& dateOfBirth)
     : _id(id), _surname(surname), _firstName(firstName), _dateOfBirth(dateOfBirth) {}
 
     int Author::getId() const { 
@@ -12,7 +12,7 @@ Author::Author(int id, const std::string& surname, const std::string& firstName,
     std::string Author::getFirstName() const { 
         return _firstName;
          }
-    std::string Author::getDateOfBirth() const {
+    Date& Author::getDateOfBirth() {
          return _dateOfBirth; 
          }
 
@@ -22,10 +22,14 @@ Author::Author(int id, const std::string& surname, const std::string& firstName,
      void Author::setSurname(const std::string& surname){
           _surname=surname;
      }
-     void Author::setFirstName(const std::string& firstName){
-          _firstName=firstName;
-     }
-     void Author::setDateOfBirth(const std::string& dateOfBirth){
-          _dateOfBirth=dateOfBirth;
-     }
- 
+void Author::setFirstName(const std::string& firstName){
+     _firstName=firstName;
+}
+
+std::ostream& operator<<(std::ostream& os, const Author& author) {
+    os << "ID: " << author._id << "\n"
+       << "Nom: " << author._surname << "\n"
+       << "Prenom: " << author._firstName << "\n"
+       << "Date de Naissance: " << author._dateOfBirth << "\n";
+    return os;
+}

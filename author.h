@@ -2,28 +2,30 @@
 #define AUTOR_H
 #include <iostream>
 #include <string>
+#include "Date.h"
 
 class Author {
 private:
     int _id;
     std::string _surname;
     std::string _firstName;
-    std::string _dateOfBirth;
+    Date _dateOfBirth;
 
 public:
-    Author(int id, const std::string& surname, const std::string& firstName, const std::string& dateOfBirth);
+    Author(int id, const std::string& surname, const std::string& firstName, const Date& dateOfBirth);
 
     
     int getId() const;
     std::string getSurname() const;
     std::string getFirstName() const;
-    std::string getDateOfBirth() const;
+    Date& getDateOfBirth();
 
     
     void setId(int id);
     void setSurname(const std::string& surname);
     void setFirstName(const std::string& firstName);
-    void setDateOfBirth(const std::string& dateOfBirth);
+
+    friend std::ostream& operator<<(std::ostream& os, const Author& author);
 };
 
-#endif // AUTOR_H²²
+#endif // AUTOR_H

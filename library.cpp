@@ -14,8 +14,8 @@ const std::vector<Borrow>& Library::getBorrows() const {
 
 void Library::addClient(const Client& newClient) {
     for (int i = 0; i < clients.size(); i++) {
-        if (newClient.getId() != clients[i].getId()) {
-            clients.emplace_back(newClient);
+        if (newClient.getIdClient() != clients[i].getIdClient()) {
+           clients.emplace_back(newClient);
         }
     }
 }
@@ -34,7 +34,7 @@ void Library::addBorrow(const Borrow& newBorrow) {
 void Library::borrowingBook(const Client& client, const Book& book) {
     for (int i = 0; i < borrows.size(); i++) {
         if (book.getISBN() != borrows[i].getISBN()) {
-            Borrow newBorrow(client.getId(), book.getISBN(), actualDate);
+            Borrow newBorrow(client.getIdClient(), book.getISBN(), actualDate);
             borrows.emplace_back(newBorrow);
         }
     }

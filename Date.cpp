@@ -50,3 +50,8 @@ bool Date::isValidDate(int day, int month, int year) const {
     }
     return false;
 }
+
+std::ostream& operator<<(std::ostream& os, const Date& date) {
+    os << date.day << "/" << date.month << "/" << date.year << "\n";
+    return os;
+}
